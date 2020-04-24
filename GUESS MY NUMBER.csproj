@@ -62,11 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Winner.cs">
+    <Compile Include="WinnerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winner.Designer.cs">
-      <DependentUpon>Winner.cs</DependentUpon>
+    <Compile Include="WinnerForm.Designer.cs">
+      <DependentUpon>WinnerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Winner.resx">
-      <DependentUpon>Winner.cs</DependentUpon>
+    <EmbeddedResource Include="WinnerForm.resx">
+      <DependentUpon>WinnerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

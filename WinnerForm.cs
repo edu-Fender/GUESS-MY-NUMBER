@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace JOGO
 {
-    public partial class Winner : Form
+    public partial class WinnerForm : Form
     {
-        public Winner()
+        public WinnerForm()
         {
             InitializeComponent();
 

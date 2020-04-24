@@ -14,7 +14,7 @@ namespace JOGO
     {
         private int counter = 0;
         readonly int choice;
-        public static string Win { private set; get; }  //'Win' string is called by 'Winner' form
+        public static string Win { private set; get; }  //'Win' string is called by 'WinnerForm' 
 
         public MainForm()
         {
@@ -49,8 +49,8 @@ namespace JOGO
                     
                     Win = string.Format ("Parabéns, meu número é {0}, e você precisou de {1} tentativas para adivinhar!", guess, counter);
                    
-                    Winner kkk = new Winner();  //calls 'Winner' form
-                    kkk.Show();  
+                    WinnerForm kkk = new WinnerForm();  //calls 'WinnerForm' 
+                    kkk.ShowDialog();  
                 } 
 
                 else
