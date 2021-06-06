@@ -12,11 +12,13 @@ namespace JOGO
 {
     public partial class WinnerForm : Form
     {
+
         public WinnerForm()
         {
             InitializeComponent();
 
-            label1.Text = MainForm.Win;  //prints string from 'MainForm'
+            label1.Text = MainForm.text;  //prints string from 'MainForm'
+            pictureBox1.BackgroundImage = MainForm.img;  //gets image from 'MainForm'
         }
 
         private void button2_Click(object sender, EventArgs e)

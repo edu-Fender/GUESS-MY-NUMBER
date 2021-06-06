@@ -90,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,6 +116,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guess-i-failed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hacker.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moutaineer-celebrating.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crystal-ball1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

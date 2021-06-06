@@ -6,8 +6,6 @@ using System.Windows.Forms;
 
 namespace JOGO
 {
-
-
     static class Program
     {   
         /// <summary>

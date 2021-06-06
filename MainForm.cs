@@ -12,14 +12,16 @@ namespace JOGO
 {
     public partial class MainForm : Form
     {
-        private int counter = 0;
-        readonly int choice;
-        public static string Win { private set; get; }  //'Win' string is called by 'WinnerForm' 
+        readonly int target;
+        int counter = 0;
+
+        public static string text { private set; get; }  //This variable is called by 'WinnerForm' 
+        public static Image img { private set; get; }  //This also
 
         public MainForm()
         {
-            Random k = new Random();  
-            choice = k.Next(-1, 1001);  //takes random number betwween 0 and 1000
+            Random k = new Random();
+            target = k.Next(-1, 1001);  //grabs random number betwween 0 and 1000
 
             InitializeComponent();
         }
@@ -28,40 +30,56 @@ namespace JOGO
         {
             try
             {
-                int guess = Convert.ToInt16(textBox1.Text);  //takes input from user                                              
+                int guess = Convert.ToInt16(textBox1.Text);  //takes input from user                   
 
-                if (guess < choice)
+                if (guess < target)
                 {
-                    label4.Text = string.Format("Meu número é maior que {0}!", guess);
+                    label4.Text = string.Format("My number is greater than {0}!", guess);
                     counter++;
                 }
 
-                else if (guess > choice)
+                else if (guess > target)
                 {
-                    label4.Text = string.Format("Meu número é menor que {0}!", guess);
+                    label4.Text = string.Format("My number is less than {0}!", guess);
                     counter++;
                 }
 
-                else if (guess == choice)
+                else if (guess == target)
                 {
                     counter++;
-                    label4.Text = "ADIVINHAÇÃO BEM SUCEDIDA!";
-                    
-                    Win = string.Format ("Parabéns, meu número é {0}, e você precisou de {1} tentativas para adivinhar!", guess, counter);
-                   
-                    WinnerForm kkk = new WinnerForm();  //calls 'WinnerForm' 
-                    kkk.ShowDialog();  
-                } 
+                    label4.Text = "THE NUMBER WAS GUESSED!";
+
+                    text = string.Format("Congratulations! The number was {0}!", guess);
+                    if (counter <= 4)
+                    {
+                        text += (string.Format("\n {0} tries? Such a legend!", counter));
+                        img = Properties.Resources.hacker;
+                    }
+                    else if (counter > 5 && counter <= 10)
+                    {
+                        text += (string.Format("\n {0} tries? You did it tho!", counter));
+                        img = Properties.Resources.moutaineer_celebrating;
+                    }
+                    else if (counter > 10)
+                    {
+                        text += (string.Format("\n {0} tries? You're not that good of a Guesser.", counter));
+                        img = Properties.Resources.guess_i_failed;
+                    }
+
+                    WinnerForm form = new WinnerForm();  //calls 'WinnerForm' 
+                    form.ShowDialog();
+                }
 
                 else
                 {
-                    label4.Text = "Digite um número ENTRE 0 e 1000!";
+                    label4.Text = "Type a number BETWEEN 0 and 1000!";
                 }
             }
             catch
             {
-                label4.Text = "Por favor digite um NÚMERO!";
+                label4.Text = "Please type a NUMBER!";
             }
         }
     }
 }
+
