@@ -50,7 +50,12 @@ namespace JOGO
                     label4.Text = "THE NUMBER WAS GUESSED!";
 
                     text = string.Format("Congratulations! The number was {0}!", guess);
-                    if (counter <= 4)
+                    if (counter == 1)
+                    {
+                        text += (string.Format("\n {0} try? Your're the king of kings!", counter));
+                        img = Properties.Resources.king_of_kings;
+                    }
+                    else if (counter > 1 && counter <= 5)
                     {
                         text += (string.Format("\n {0} tries? Such a legend!", counter));
                         img = Properties.Resources.hacker;

@@ -12,7 +12,6 @@ namespace JOGO
 {
     public partial class WinnerForm : Form
     {
-
         public WinnerForm()
         {
             InitializeComponent();
